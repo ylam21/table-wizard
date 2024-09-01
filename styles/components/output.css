@@ -1,0 +1,85 @@
+.output {
+  margin-top: 1rem;
+  width: fit-content;
+  padding: 1rem;
+}
+.ouput__horizontal-flex {
+  display: flex;
+  justify-content: stretch;
+}
+
+.output__horizontal-item {
+  background-color: pink;
+  color: black;
+
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+
+  height: 2.5rem;
+  width: 2.5rem;
+
+  margin-left: var(--gap);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.output__horizontal-item:first-child {
+  margin-left:0;
+  visibility: hidden;
+}
+
+.output__wrapper {
+  display: flex;
+}
+.ouput__vertical-flex {
+  margin-top: var(--gap);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.output__vertical-item {
+  background-color: rgb(157, 236, 157);
+  color: black;
+
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+
+  height: 2.5rem;
+  width: 2.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.output__layout-grid {
+
+  margin-left: var(--gap);
+  margin-top: var(--gap);
+
+  display: grid;
+  gap: var(--gap);
+  grid-template: repeat(var(--rowsInput), 1fr) / repeat(
+      var(--columnsInput),
+      1fr
+    );
+}
+
+.output__layout-item {
+  background-color: rgb(44, 44, 44);
+  color: white;
+
+  height: 2.5rem;
+  width: 2.5rem;
+
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
