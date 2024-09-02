@@ -1,3 +1,31 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+}
+
 .controls__input {
   cursor: pointer;
+}
+
+.controls__group-1,
+.controls__group-2,
+.controls__group-3 {
+  flex: 1;
+  align-items: center;
+}
+
+.controls__group-3 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.controls__link {
+  text-align: center;
+  display: inline;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: auto;
 }

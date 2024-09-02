@@ -1,11 +1,13 @@
 .container {
-  width: 80%;
-  margin-left: 5rem;
+  width: 90%;
+  margin-inline: auto;
 }
 
 .btn {
+  display: inline-block;
   border-radius: 5px;
   border: 1px solid black;
 
   padding: 0.5rem;
+  width: 9rem;
 }

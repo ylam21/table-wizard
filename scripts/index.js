@@ -90,5 +90,7 @@ function createLayout () {
 
 createLayoutBtn.addEventListener("click",createLayout);
 clearBtn.addEventListener("click",clearOutput);
+
+// possible to turn on if needed
 // rowsInput.addEventListener("change",createLayout);
 // columnsInput.addEventListener("change",createLayout);

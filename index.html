@@ -21,15 +21,22 @@
     <p class=header__description>Data Arrangement Tool</p>
     <p class="header__description">Version 1.0</p>
   </header>
+  <hr class="container">
   <section class="controls container">
-    <label class="controls__label" for="rowsInput">Set rows</label>
-    <input class="controls__input" type="number" min="0" max="100" id="rowsInput">
-    <label class="controls__label" for="columnsInput">Set columns</label>
-    <input class="controls__input" type="number" min="0" max="100" id="columnsInput">
-    <button class="controls__btn btn" id="advancedBtn">Advanced</button>
-    <button class="controls__btn btn" id="createLayoutBtn">Create grid</button>
-    <button class="controls__btn btn" id="clearBtn">Clear grid</button>
-    <button class="btn">See code</button>
+    <div class="controls__group-1">
+      <label class="controls__label" for="rowsInput">Set rows</label>
+      <input class="controls__input" type="number" min="0" max="100" id="rowsInput">
+      <label class="controls__label" for="columnsInput">Set columns</label>
+      <input class="controls__input" type="number" min="0" max="100" id="columnsInput">
+    </div>
+    <div class="controls__group-2">
+      <button class="controls__btn btn" id="createLayoutBtn">Create grid</button>
+      <button class="controls__btn btn" id="clearBtn">Clear grid</button>
+      <button class="controls__btn btn" id="advancedBtn">Advanced</button>
+    </div>
+    <div class="controls__group-3">
+      <a class="controls__link btn" href="https://github.com/ohnivasasanka/tablewizard.com" target="_blank" id="seeCodeBtn">See Code</a>
+    </div>
   </section>
   <main class="output">
     <div class="ouput__horizontal-flex" id="horFlex"></div>

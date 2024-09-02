@@ -2,16 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  /* border: 1px solid red; */
-
 }
 
 .header__info {
-  /* border: 1px solid red; */
+  display: inline-block;
   font-style: italic;
-
 }
 .header__author {
-  font-size: small;
+  font-size: medium;
 }
