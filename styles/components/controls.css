@@ -16,9 +16,15 @@
   align-items: center;
 }
 
+.controls__group-2 {
+  flex-wrap: nowrap;
+  min-width: fit-content;
+}
+
 .controls__group-3 {
   display: flex;
   justify-content: flex-end;
+
 }
 
 .controls__link {
