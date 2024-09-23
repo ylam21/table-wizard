@@ -94,8 +94,3 @@ clearBtn.addEventListener("click",clearOutput);
 // possible to turn on if needed
 // rowsInput.addEventListener("change",createLayout);
 // columnsInput.addEventListener("change",createLayout);
-
-const checkRandom = document.getElementById("checkRandom");
-
-console.log(checkRandom.value)
-checkRandom.addEventListener("click",() => console.log('This value is:',checkRandom.value))

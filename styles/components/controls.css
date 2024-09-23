@@ -11,7 +11,8 @@
 
 .controls__group {
   display: flex;
-  align-items: center;
+  margin-top: 2rem;
+  align-items: start; 
 }
 
 
