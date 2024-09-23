@@ -9,23 +9,11 @@
   cursor: pointer;
 }
 
-.controls__group-1,
-.controls__group-2,
-.controls__group-3 {
-  flex: 1;
+.controls__group {
+  display: flex;
   align-items: center;
 }
 
-.controls__group-2 {
-  flex-wrap: nowrap;
-  min-width: fit-content;
-}
-
-.controls__group-3 {
-  display: flex;
-  justify-content: flex-end;
-
-}
 
 .controls__link {
   text-align: center;
@@ -34,4 +22,15 @@
   text-decoration: none;
   cursor: pointer;
   margin-left: auto;
+}
+
+.controls__box {
+  border: 1px solid pink;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.box__label {
+  color: pink;
+  font-weight: bolder;
 }

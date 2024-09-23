@@ -11,3 +11,9 @@
 .header__author {
   font-size: medium;
 }
+
+
+.todo__container {
+  display: flex;
+  align-items: center;
+}
