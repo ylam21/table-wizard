@@ -17,3 +17,8 @@
   color: red;
   margin-left: 0.2rem;
 }
+
+.maxinfo {
+  color: grey;
+  font-size: smaller;
+}

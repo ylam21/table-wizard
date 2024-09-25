@@ -25,9 +25,28 @@
   border: 1px solid pink;
   border-radius: 5px;
   padding: 10px;
+  text-align: center;
+
 }
 
 .box__label {
   color: pink;
   font-weight: bolder;
+}
+
+.controls__pupik {
+  /* border:1px solid red; */
+  margin-top:0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pupik-btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  flex:1
+}
+
+.pupik-reset{
+ color: red;
 }

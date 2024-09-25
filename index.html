@@ -22,10 +22,23 @@
       <div>
         <label for="controls__box" class=" box__label">Grid setup</label>
         <div class="controls__box">
-          <label class="controls__label" for="rowsInput">Set rows:</label>
-          <input class="controls__input" type="number" min="0" max="100" id="rowsInput">
-          <label class="controls__label" for="columnsInput">Set columns:</label>
-          <input class="controls__input" type="number" min="0" max="100" id="columnsInput">
+        
+            <label class="controls__label" for="rowsInput">Set rows:</label>
+            <input class="controls__input" type="number" min="0" max="100" id="rowsInput">      
+            <label class="controls__label" for="columnsInput">Set columns:</label>
+            <input class="controls__input" type="number" min="0" max="100" id="columnsInput">
+            <br>
+            <span class="maxinfo">(min 0 / max 100)</span>
+          
+        
+        </div>
+        <div class="controls__pupik">
+          <button class="pupik-btn" id="5x5" value="5">5x5</button>
+          <button class="pupik-btn" id="10x10" value="10">10x10</button>
+          <button class="pupik-btn" id="20x20" value="20">20x20</button>
+          <button class="pupik-btn" id="50x50" value="50">50x50</button>
+          <button class="pupik-btn" id="100x100" value="100">100x100</button>
+          <button class="pupik-btn pupik-reset" id="0x0" value="0">Reset</button>
         </div>
       </div>
       <div>
@@ -38,9 +51,9 @@
       <div>
         <label for="controls__box" class="box__label">Arrangement</label>
         <div class="controls__box">
-          <input type="radio" name="arrange"> Random
-          <input type="radio" name="arrange"> Ordered
-          <input type="radio" name="arrange"> Custom
+          <input type="radio" name="arrange"> Random <span class="notavail">(n/a)</span>
+          <input type="radio" name="arrange"> Ordered <span class="notavail">(n/a)</span>
+          <input type="radio" name="arrange"> Custom <span class="notavail">(n/a)</span>
         </div>
       </div>
     </div>
