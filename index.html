@@ -15,31 +15,24 @@
   <header class="header container">
       <h1 class="header__title">Table Wizard</h1>
     <p class=header__description>Data Arrangement Tool</p>
-    <div class="todo__container">
-      <a href="./pages/todo.html" class="todo__link">Todo list</a>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20px" height="20px">
-        <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-      </svg>
-    </div>
   </header>
   <hr class="container">
   <section class="controls container">
-
-    <div class="controls__group">
+    <div class="controls__box-container">
       <div>
-        <label for="controls__box" class=" box__label">Step 1</label>
+        <label for="controls__box" class=" box__label">Grid setup</label>
         <div class="controls__box">
-          <label class="controls__label" for="rowsInput">Set rows</label>
+          <label class="controls__label" for="rowsInput">Set rows:</label>
           <input class="controls__input" type="number" min="0" max="100" id="rowsInput">
-          <label class="controls__label" for="columnsInput">Set columns</label>
+          <label class="controls__label" for="columnsInput">Set columns:</label>
           <input class="controls__input" type="number" min="0" max="100" id="columnsInput">
         </div>
       </div>
       <div>
         <label for="controls__box" class="box__label">Type of data</label>
         <div class="controls__box">
-          <input type="radio" id="checkTypeNumber" name="type"> Number
-          <input type="radio" id="checkTypeString" name="type"> String
+          <input type="radio" id="checkTypeNumber" name="type" value="typeNumber"> Number
+          <input type="radio" id="checkTypeString" name="type" value="typeString"> String
          
         </div>
       </div>
@@ -52,12 +45,10 @@
         </div>
       </div>
     </div>
-
-
-    <div class="controls__group">
-      <button class="controls__btn btn" id="createLayoutBtn">Create grid</button>
-      <button class="controls__btn btn" id="clearBtn">Clear grid</button>
-    </div>
+  </section>
+  <section class="container">
+    <button class="btn" id="createLayoutBtn">Create grid</button>
+    <button class="btn" id="clearBtn">Clear grid</button>
   </section>
   <main class="output">
     <div class="ouput__horizontal-flex" id="horFlex"></div>

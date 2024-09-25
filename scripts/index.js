@@ -3,6 +3,12 @@ var infoText = document.getElementById("info");
 // controls section
 var rowsInput = document.getElementById("rowsInput");
 var columnsInput = document.getElementById("columnsInput");
+
+// type of data
+const typeInputGetAll = document.getElementsByName("type")
+const typeOfDataNumberInput = document.getElementById("checkTypeNumber")
+const typeOfDataStringInput = document.getElementById("checkTypeString")
+
 var createLayoutBtn = document.getElementById("createLayoutBtn");
 var clearBtn = document.getElementById("clearBtn");
 
@@ -80,11 +86,13 @@ function createContentGrid () {
 
 
 function createLayout () {
-  clearOutput();
-  adjustOutput();
-  createHorizontalFlex();
-  createVerticalFlex ();
-  createContentGrid();
+  // console.log(Array.from(typeInputGetAll).filter(x => x.checked === true)[0].value)
+
+    clearOutput();
+    adjustOutput();
+    createHorizontalFlex();
+    createVerticalFlex ();
+    createContentGrid();
 };
 
 

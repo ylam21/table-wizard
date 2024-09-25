@@ -1,19 +1,15 @@
 .controls {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 3rem;
+}
+
+.controls__box-container {
+  display: flex;
 }
 
 .controls__input {
   cursor: pointer;
 }
 
-.controls__group {
-  display: flex;
-  margin-top: 2rem;
-  align-items: start; 
-}
 
 
 .controls__link {

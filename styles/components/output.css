@@ -9,8 +9,8 @@
 }
 
 .output__horizontal-item {
-  background-color: pink;
-  color: black;
+  /* background-color: pink; */
+  color: grey;
 
   border-radius: 0.25rem;
   padding: 0.5rem;
@@ -42,8 +42,8 @@
 }
 
 .output__vertical-item {
-  background-color: rgb(157, 236, 157);
-  color: black;
+  /* background-color: rgb(157, 236, 157); */
+  color: gray;
 
   border-radius: 0.25rem;
   padding: 0.5rem;
