@@ -1,7 +1,7 @@
 :root {
   /* inputs */
-  --rowsInput: 5;
-  --columnsInput: 5;
+  --rowsInput: 0;
+  --columnsInput: 0;
 
   --gap: 0.1rem;
 }

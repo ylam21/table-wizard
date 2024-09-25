@@ -1,23 +1,25 @@
-// header section
-var infoText = document.getElementById("info");
-// controls section
-var rowsInput = document.getElementById("rowsInput");
-var columnsInput = document.getElementById("columnsInput");
+//  controls section
+
+// grid setup
+const rowsInput = document.getElementById("rowsInput");
+const columnsInput = document.getElementById("columnsInput");
 
 // type of data
 const typeInputGetAll = document.getElementsByName("type")
 const typeOfDataNumberInput = document.getElementById("checkTypeNumber")
 const typeOfDataStringInput = document.getElementById("checkTypeString")
 
-var createLayoutBtn = document.getElementById("createLayoutBtn");
-var clearBtn = document.getElementById("clearBtn");
+const createLayoutBtn = document.getElementById("createLayoutBtn");
+const clearBtn = document.getElementById("clearBtn");
 
-// output section
-var horizontalFlex = document.getElementById ("horFlex");
-var verticalFlex = document.getElementById ("verFlex");
-var layoutGrid = document.getElementById("layoutGrid");
+//  output section
+const horizontalFlex = document.getElementById ("horFlex");
+const verticalFlex = document.getElementById ("verFlex");
+const layoutGrid = document.getElementById("layoutGrid");
 
-function clearOutput () {
+let rows,columns,totalItemsCalc;
+
+const clearOutput = () => {
   document.documentElement.style.setProperty("--rowsInput", 0);
   document.documentElement.style.setProperty("--columnsInput", 0); 
   horizontalFlex.innerHTML = "";
@@ -25,21 +27,19 @@ function clearOutput () {
   layoutGrid.innerHTML = "";
 };
 
-function adjustOutput () {
-  var rows = rowsInput.value;
-  var columns = columnsInput.value;
 
+const adjustOutput = (rows,columns) => {
+  
   document.documentElement.style.setProperty("--rowsInput", rows);
   document.documentElement.style.setProperty("--columnsInput", columns); 
 };
 
-function createHorizontalFlex () {
-  var columns = columnsInput.value;
+const createHorizontalFlex = (columns) => {
   horizontalFlex.classList.add("output__horizontal-flex");
   
   for (let c=0;c<=columns;c++) {
-    var createNewPar = document.createElement("p");
-    var createNewDiv = document.createElement("div");
+    let createNewPar = document.createElement("p");
+    let createNewDiv = document.createElement("div");
 
     createNewPar.appendChild(document.createTextNode(c));
     createNewDiv.appendChild(createNewPar);
@@ -50,13 +50,12 @@ function createHorizontalFlex () {
 
 };
 
-function createVerticalFlex () {
-  var rows = rowsInput.value;
+const createVerticalFlex = (rows) => {
   verticalFlex.classList.add("output__vertical-flex")
   
   for (let r=1;r<=rows;r++) {
-    var createNewPar = document.createElement("p");
-    var createNewDiv = document.createElement("div");
+    let createNewPar = document.createElement("p");
+    let createNewDiv = document.createElement("div");
 
     createNewPar.appendChild(document.createTextNode(r));
     createNewDiv.appendChild(createNewPar);
@@ -66,15 +65,12 @@ function createVerticalFlex () {
   };
 };
 
-function createContentGrid () {
-  var rows = rowsInput.value;
-  var columns = columnsInput.value;
-  var totalItemsCalc = rows * columns;
+const createContentGrid = (totalItemsCalc) => {
   layoutGrid.classList.add("output__layout-grid");
 
-  for (var i = 0; i<totalItemsCalc; i++) {
-   var createNewDiv = document.createElement("div");
-   var createNewP = document.createElement("p");
+  for (let i = 0; i<totalItemsCalc; i++) {
+   let createNewDiv = document.createElement("div");
+   let createNewP = document.createElement("p");
 
    createNewP.appendChild(document.createTextNode(i));
    createNewDiv.appendChild(createNewP);
@@ -85,20 +81,20 @@ function createContentGrid () {
 
 
 
-function createLayout () {
+const createLayout = () => {
   // console.log(Array.from(typeInputGetAll).filter(x => x.checked === true)[0].value)
+// update inputs values
+    rows = rowsInput.value;
+    columns = columnsInput.value;
+    totalItemsCalc = rows * columns;
 
     clearOutput();
-    adjustOutput();
-    createHorizontalFlex();
-    createVerticalFlex ();
-    createContentGrid();
+    adjustOutput(rows,columns);
+    createHorizontalFlex(columns);
+    createVerticalFlex(rows);
+    createContentGrid(totalItemsCalc);
 };
 
 
 createLayoutBtn.addEventListener("click",createLayout);
 clearBtn.addEventListener("click",clearOutput);
-
-// possible to turn on if needed
-// rowsInput.addEventListener("change",createLayout);
-// columnsInput.addEventListener("change",createLayout);
