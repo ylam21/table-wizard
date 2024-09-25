@@ -113,6 +113,7 @@ const createLayout = () => {
     columns = columnsInput.value;
     totalItemsCalc = rows * columns;
 
+// check if input is right
 if (rows > 100 || columns > 100 || rows < 0 || columns < 0) {
   return 0;
 }
