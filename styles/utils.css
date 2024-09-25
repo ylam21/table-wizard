@@ -21,4 +21,5 @@
 .maxinfo {
   color: grey;
   font-size: smaller;
+  user-select: none;
 }
