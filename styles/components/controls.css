@@ -1,7 +1,12 @@
 .controls__box-container {
   display: flex;
+  gap: 1rem;
 }
 
+.controls__panel {
+  min-width: 15rem;
+  /* border: 1px solid blue */
+}
 .controls__input {
   cursor: pointer;
 }
@@ -17,20 +22,23 @@
 }
 
 .controls__box {
-  border: 1px solid pink;
+  border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
-
+  height: 80%;
+  align-content: center; 
 }
 
 .box__label {
-  color: pink;
+  color: black;
   font-weight: bolder;
 }
 
 .controls__pupik {
   /* border:1px solid red; */
+  gap: 0.5rem; 
+  width: min-content;
   margin-top:0.5rem;
   display: flex;
   justify-content: space-between;
@@ -39,7 +47,8 @@
 .pupik-btn {
   border: 1px solid black;
   border-radius: 5px;
-  flex:1
+  flex:1;
+  min-width: 5rem;
 }
 
 .pupik-reset{

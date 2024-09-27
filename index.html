@@ -19,14 +19,14 @@
   <hr class="container">
   <section class="controls container">
     <div class="controls__box-container">
-      <div>
+      <div class="controls__panel">
         <label for="controls__box" class=" box__label">Grid setup</label>
         <div class="controls__box">
-        
+          <div>
             <label class="controls__label" for="rowsInput">Set rows:</label>
-            <input class="controls__input" type="number" min="0" max="100" id="rowsInput">      
+            <input class="controls__input" type="number" min="0" max="100" id="rowsInput" value="0">     
             <label class="controls__label" for="columnsInput">Set columns:</label>
-            <input class="controls__input" type="number" min="0" max="100" id="columnsInput">
+            <input class="controls__input" type="number" min="0" max="100" id="columnsInput" value="0">
             <br>
             <span class="maxinfo">(min 0 / max 100)</span>
           
@@ -38,10 +38,10 @@
               <button class="pupik-btn" id="100x100" value="100">100x100</button>
               <button class="pupik-btn pupik-reset" id="0x0" value="0">Reset</button>
             </div>
-        
+          </div>
         </div>
       </div>
-      <div>
+      <div class="controls__panel">
         <label for="controls__box" class="box__label">Data type</label>
         <div class="controls__box">
           <input type="radio" id="checkTypeNumber" name="type" value="typeNumber" checked> Number
@@ -50,24 +50,25 @@
           </div>
         </div> 
       </div>
-      <div>
+      <div class="controls__panel">
         <label for="controls__box" class="box__label">Arrangement</label>
         <div class="controls__box">
-          <input type="radio" name="arrange"> Random <span class="notavail">(n/a)</span>
-          <input type="radio" name="arrange"> Ordered <span class="notavail">(n/a)</span>
-          <input type="radio" name="arrange"> Custom <span class="notavail">(n/a)</span>
+          <input type="radio" name="arrange" value="arrangeRandom" checked> Random
+          <input type="radio" name="arrange" value="arrangeOrdered"> Ordered
+          <div class="dont-show">
+            <input type="radio" name="arrange" value="arrangeCustom"> Custom
+          </div>
         </div>
       </div>
     </div>
   </section>
   <section class="container">
-    <button class="btn" id="createLayoutBtn">Create grid</button>
-    <button class="btn" id="clearBtn">Clear grid</button>
-    <button class="btn" id="testBtn">Test</button>
+    <button class="btn" id="createLayoutBtn">Create</button>
+    <button class="btn" id="clearBtn">Clear</button>
   </section>
   <div class="container">
-    <span>Sum: </span>
-    <span id="sum"></span>
+    <span class="appe-text  ">Appearance: </span>
+    <span id="sumInfo"></span>
   </div>
   <main class="output">
     <div class="output__horizontal-flex" id="horFlex"></div>

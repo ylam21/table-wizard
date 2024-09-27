@@ -1,6 +1,7 @@
 .output {
   margin-top: 1rem;
   padding: 1rem;
+  width: max-content;
 }
 .output__horizontal-flex {
   display: flex;

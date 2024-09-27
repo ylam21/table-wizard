@@ -1,5 +1,4 @@
 .container {
-  /* border: 1px solid red; */
   width: 90%;
   margin: 1rem auto 0 ;
 }
@@ -26,4 +25,8 @@
 
 .dont-show{
   display: none;
+}
+
+.appe-text {
+  font-size: smaller;
 }
