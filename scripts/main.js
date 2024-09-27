@@ -121,6 +121,12 @@ const findPath = (checkedType,checkedArrange,totalItemsCalc) => {
   }
 };
 
+const updateAppeInfo = () => {
+  if (checkedArrange != "arrangeOrdered") {
+    sumInfo.innerHTML = String(JSON.stringify(getSumInfo())).replace(/[{}]/g, '')
+  }
+}
+
 const createLayout = () => {
   updateAllInputValues();
   // check if input is right
@@ -129,7 +135,7 @@ const createLayout = () => {
   }
 
   else if (rows == 0 || columns == 0) {
-    return 0
+    return clearCurrentOutput();
   }
   
   else {
@@ -138,11 +144,9 @@ const createLayout = () => {
   createHorizontalFlex(columns);
   createVerticalFlex(rows);
   findPath(checkedType,checkedArrange,totalItemsCalc);
-  // sum info update
-  if (checkedArrange != "arrangeOrdered") {
-    sumInfo.innerHTML = String(JSON.stringify(getSumInfo())).replace(/[{}]/g, '')
+  updateAppeInfo();
 }
-}};
+};
 
 // !rename functions
 createLayoutBtn.addEventListener("click",createLayout);
