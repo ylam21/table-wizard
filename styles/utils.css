@@ -23,3 +23,7 @@
   font-size: smaller;
   user-select: none;
 }
+
+.dont-show{
+  display: none;
+}

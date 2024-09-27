@@ -1,7 +1,3 @@
-.controls {
-  display: flex;
-}
-
 .controls__box-container {
   display: flex;
 }
@@ -9,7 +5,6 @@
 .controls__input {
   cursor: pointer;
 }
-
 
 
 .controls__link {

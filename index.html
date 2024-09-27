@@ -44,9 +44,11 @@
       <div>
         <label for="controls__box" class="box__label">Data type</label>
         <div class="controls__box">
-          <input type="radio" id="checkTypeNumber" name="type" value="typeNumber"> Number
-          <input type="radio" id="checkTypeString" name="type" value="typeString"> String<span class="notavail">(n/a)</span>
-        </div>
+          <input type="radio" id="checkTypeNumber" name="type" value="typeNumber" checked> Number
+          <div class="dont-show">
+            <input type="radio" id="checkTypeString" name="type" value="typeString"> String<span class="notavail">(n/a)</span>
+          </div>
+        </div> 
       </div>
       <div>
         <label for="controls__box" class="box__label">Arrangement</label>
@@ -61,16 +63,21 @@
   <section class="container">
     <button class="btn" id="createLayoutBtn">Create grid</button>
     <button class="btn" id="clearBtn">Clear grid</button>
+    <button class="btn" id="testBtn">Test</button>
   </section>
+  <div class="container">
+    <span>Sum: </span>
+    <span id="sum"></span>
+  </div>
   <main class="output">
-    <div class="ouput__horizontal-flex" id="horFlex"></div>
+    <div class="output__horizontal-flex" id="horFlex"></div>
     <div class="output__wrapper">
-      <div class="ouput__vertical-flex" id="verFlex"></div>
+      <div class="output__vertical-flex" id="verFlex"></div>
       <div class="output__layout-grid" id="layoutGrid"></div>
     </div>
   </main>
   <script src="scripts/utils.js"></script>
-  <script src="scripts/header.js"></script>
-  <script src="scripts/index.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/sections/controls.js"></script>
 </body>
 </html>
