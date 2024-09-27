@@ -1,7 +1,11 @@
 .output {
   margin-top: 1rem;
-  padding: 1rem;
-  width: max-content;
+  margin-left: 5%;
+  margin-right: 500px;
+  min-width: fit-content;
+  position: relative;
+  left: -2.6rem;
+
 }
 .output__horizontal-flex {
   display: flex;
@@ -35,7 +39,6 @@
 }
 .output__vertical-flex {
   margin-top: var(--gap);
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
