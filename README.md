@@ -1,5 +1,5 @@
-Table Wizard
-Data Arrangement Tool
+#Table Wizard
+##Data Arrangement Tool
 
 Table Wizard allows you to create customized tables based on your criteria, handling two types of data: numbers and strings.
 
