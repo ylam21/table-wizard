@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Table Wizard</title>
+  <link rel="icon" type="image/jpg" href="/images/favicon.ico?v1">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Table Wizard</title>
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/utils.css">
   <link rel="stylesheet" href="styles/modern-normalize.css">
@@ -13,63 +14,118 @@
 </head>
 <body>
   <header class="header container">
-      <h1 class="header__title">Table Wizard</h1>
-    <p class=header__description>Data Arrangement Tool</p>
+    <h1 class="header__title">Table Wizard</h1>
+    <span class=header__description>Data Arrangement Tool</span>
   </header>
-  <hr class="container">
   <section class="controls container">
-    <div class="controls__box-container">
+    <div class="controls__panel-container">
       <div class="controls__panel">
         <label for="controls__box" class=" box__label">Grid setup</label>
         <div class="controls__box">
-          <div>
             <label class="controls__label" for="rowsInput">Set rows:</label>
-            <input class="controls__input" type="number" min="0" max="100" id="rowsInput" value="0">     
+            <input class="controls__input" type="number" min="0" max="50" id="rowsInput" value="0">     
             <label class="controls__label" for="columnsInput">Set columns:</label>
-            <input class="controls__input" type="number" min="0" max="100" id="columnsInput" value="0">
+            <input class="controls__input" type="number" min="0" max="50" id="columnsInput" value="0">
             <br>
-            <span class="maxinfo">(min 0 / max 100)</span>
+            <span class="maxinfo">(min 0 / max 50)</span>
           
-            <div class="controls__pupik">
-              <button class="pupik-btn" id="5x5" value="5">5x5</button>
-              <button class="pupik-btn" id="10x10" value="10">10x10</button>
-              <button class="pupik-btn" id="20x20" value="20">20x20</button>
-              <button class="pupik-btn" id="50x50" value="50">50x50</button>
-              <button class="pupik-btn" id="100x100" value="100">100x100</button>
-              <button class="pupik-btn pupik-reset" id="0x0" value="0">Reset</button>
+            <div class="controls__preset">
+              <button class="preset-btn" id="5x5" value="5">5x5</button>
+              <button class="preset-btn" id="10x10" value="10">10x10</button>
+              <button class="preset-btn" id="20x20" value="20">20x20</button>
+              <button class="preset-btn" id="50x50" value="50">50x50</button>
+              <button class="preset-btn preset-reset" id="0x0" value="0">Reset</button>
             </div>
           </div>
-        </div>
+          <div class="controls__color">
+            <span class="item-color-picker">0</span>
+            <span class="item-color-picker">1</span>
+            <span class="item-color-picker">2</span>
+            <span class="item-color-picker">3</span>
+            <span class="item-color-picker">4</span>
+            <span class="item-color-picker">5</span>
+            <span class="item-color-picker">6</span>
+            <span class="item-color-picker">7</span>
+            <span class="item-color-picker">8</span>
+            <span class="item-color-picker">9</span>
+          </div>
+          <div class="controls__pallete" id="pallete-switch">
+            <span class="item-color" value="#2c2c2c"></span>
+            <span class="item-color" value="#f87171"></span>
+            <span class="item-color" value="#fdba74"></span>
+            <span class="item-color" value="#fde047"></span>
+            <span class="item-color" value="#86efac"></span>
+            <span class="item-color" value="#a3e635"></span>
+            <span class="item-color" value="#34d399"></span>
+            <span class="item-color" value="#60a5fa"></span>
+            <span class="item-color" value="#c4b5fd"></span>
+            <span class="item-color" value="#f9a8d4"></span>
+          </div> 
+          <div class="controls__buttons">
+            <button class="btn" id="createBtn">Create</button>
+            <button class="btn" id="clearBtn">Clear</button>
+          </div>
       </div>
       <div class="controls__panel">
-        <label for="controls__box" class="box__label">Data type</label>
+        <label for="controls__box" class="box__label">Conditions</label>
         <div class="controls__box">
-          <input type="radio" id="checkTypeNumber" name="type" value="typeNumber" checked> Number
-          <div class="dont-show">
-            <input type="radio" id="checkTypeString" name="type" value="typeString"> String<span class="notavail">(n/a)</span>
+          <div class="conditions-fill" id="controls-con-content">
+            <div class="condition-text">
+              <span>Label:</span>
+              <input type="text" name="cond-name" id="cond-name" placeholder="Name">
+              <span>Area:</span>  
+              <select name="cond-group" id="condGroup">
+                    <option name="cond-group-opt" value="table">Table</option>
+                    <option name="cond-group-opt" value="row">Row</option>
+                    <option name="cond-group-opt" value="column">Column</option>
+                    <option name="cond-group-opt" value="all-rows">All rows</option>
+                    <option name="cond-group-opt" value="all-columns">All columns</option>
+              </select>
+              <span>Index:</span>
+              <input type="number" id="row-col-index-input">
+              <span>Object:</span>
+              <select name="cond-data" id="condData">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+              </select>
+              <span>Appear:</span>
+              <select name="cond-con" id="condCon">
+                  <option value="min">min</option>
+                  <option value="max">max</option>
+                  <option value="exact">exactly</option>
+                </select>
+                <span>Times:</span>
+                  <select name="cond-times" id="condTimes">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+              </select>
+            </div>
+            <div>
+              <button class="add__condition" id="add-con-btn">Add</button>  
+            </div>
           </div>
-        </div> 
-      </div>
-      <div class="controls__panel">
-        <label for="controls__box" class="box__label">Arrangement</label>
-        <div class="controls__box">
-          <input type="radio" name="arrange" value="arrangeRandom" checked> Random
-          <input type="radio" name="arrange" value="arrangeOrdered"> Ordered
-          <div class="dont-show">
-            <input type="radio" name="arrange" value="arrangeCustom"> Custom
-          </div>
+          <span for="my-condition" class="maxinfo">Active conditions:</span>
+          <div class="" id="my-condition"></div>
         </div>
       </div>
     </div>
   </section>
-  <section class="container">
-    <button class="btn" id="createLayoutBtn">Create</button>
-    <button class="btn" id="clearBtn">Clear</button>
-  </section>
-  <div class="container">
-    <span class="appe-text  ">Appearance: </span>
-    <span id="sumInfo"></span>
-  </div>
   <main class="output">
     <div class="output__horizontal-flex" id="horFlex"></div>
     <div class="output__wrapper">
@@ -77,8 +133,8 @@
       <div class="output__layout-grid" id="layoutGrid"></div>
     </div>
   </main>
-  <script src="scripts/utils.js"></script>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/global.js"></script>
   <script src="scripts/sections/controls.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
