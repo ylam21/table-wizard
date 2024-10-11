@@ -50,16 +50,16 @@
             <span class="item-color-picker">9</span>
           </div>
           <div class="controls__pallete" id="pallete-switch">
-            <span class="item-color" value="#2c2c2c"></span>
-            <span class="item-color" value="#f87171"></span>
-            <span class="item-color" value="#fdba74"></span>
-            <span class="item-color" value="#fde047"></span>
-            <span class="item-color" value="#86efac"></span>
-            <span class="item-color" value="#a3e635"></span>
-            <span class="item-color" value="#34d399"></span>
-            <span class="item-color" value="#60a5fa"></span>
-            <span class="item-color" value="#c4b5fd"></span>
-            <span class="item-color" value="#f9a8d4"></span>
+            <span class="item-color btn" value="#2c2c2c"></span>
+            <span class="item-color btn" value="#f87171"></span>
+            <span class="item-color btn" value="#fdba74"></span>
+            <span class="item-color btn" value="#fde047"></span>
+            <span class="item-color btn" value="#86efac"></span>
+            <span class="item-color btn" value="#a3e635"></span>
+            <span class="item-color btn" value="#34d399"></span>
+            <span class="item-color btn" value="#60a5fa"></span>
+            <span class="item-color btn" value="#c4b5fd"></span>
+            <span class="item-color btn" value="#f9a8d4"></span>
           </div> 
           <div class="controls__buttons">
             <button class="btn" id="createBtn">Create</button>
@@ -78,11 +78,13 @@
                     <option name="cond-group-opt" value="table">Table</option>
                     <option name="cond-group-opt" value="row">Row</option>
                     <option name="cond-group-opt" value="column">Column</option>
-                    <option name="cond-group-opt" value="all-rows">All rows</option>
-                    <option name="cond-group-opt" value="all-columns">All columns</option>
+                    <option name="cond-group-opt" value="all-rows" disabled>All rows</option>
+                    <option name="cond-group-opt" value="all-columns" disabled>All columns</option>
               </select>
-              <span>Index:</span>
-              <input type="number" id="row-col-index-input">
+              <div id="optional-index">
+                <span>Index:</span>
+                <input type="number" id="row-col-index-input" value="1" min="1">
+              </div>
               <span>Object:</span>
               <select name="cond-data" id="condData">
                     <option value="0">0</option>
@@ -102,22 +104,11 @@
                   <option value="max">max</option>
                   <option value="exact">exactly</option>
                 </select>
-                <span>Times:</span>
-                  <select name="cond-times" id="condTimes">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-              </select>
+                <input type="number" id="condTimes" min="0" value="1">
+                <span id="times-time">time.</span>
             </div>
             <div>
-              <button class="add__condition" id="add-con-btn">Add</button>  
+              <button class="add__condition btn" id="add-con-btn">Add</button>  
             </div>
           </div>
           <span for="my-condition" class="maxinfo">Active conditions:</span>

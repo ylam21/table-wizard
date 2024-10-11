@@ -12,6 +12,7 @@ myButtons.forEach(btn => {
 // color change
 let myColors = document.querySelectorAll(".item-color")
 let mySquares = document.querySelectorAll(".item-color-picker")
+let newSelectedSquare;
 
 const openAndCloseMenu = ()=>{
   let pallete = document.getElementById("pallete-switch")
@@ -23,7 +24,6 @@ const openAndCloseMenu = ()=>{
   }
 } 
 
-let newSelectedSquare;
 
 const updateSelectedSquare = (el) => {
   newSelectedSquare = el
@@ -39,20 +39,18 @@ const updateSelectedSquare = (el) => {
     findSelected = arrayOfSquares.find(x => x.classList.contains("selected-square"))
     findSelected.classList.toggle("selected-square")
     newSelectedSquare.classList.toggle("selected-square")
-    
   }
-
 }
 
 mySquares.forEach(item => {
-  item.addEventListener("click", openAndCloseMenu)
   item.addEventListener("click", () => updateSelectedSquare(item))
+  item.addEventListener("click", openAndCloseMenu)
 })
 
 const assignColorValueToNewSelectedSqaure = (color,newSel)=> {
   newSel.style.backgroundColor = color.getAttribute("value")
+  updateSelectedSquare(newSel)
   openAndCloseMenu()
-
 }
 
 myColors.forEach(item => {
@@ -60,7 +58,11 @@ myColors.forEach(item => {
  item.addEventListener("click",() => assignColorValueToNewSelectedSqaure(item,newSelectedSquare))
 })
 
-const chooseColor = () => {
-  let pallete = document.getElementById("controls__pallete")
-  pallete.style.display = "flex"
-}
+//on page start resets --
+
+document.getElementById("cond-name").value = "cond-1"
+document.getElementById("condGroup").value = "table"
+document.getElementById("row-col-index-input").value = "1"
+document.getElementById("condData").value = "0"
+document.getElementById("condCon").value = "exact"
+document.getElementById("condTimes").value = "1"

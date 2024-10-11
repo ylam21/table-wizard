@@ -49,6 +49,12 @@
   font-weight: bold;
 }
 
+.preset-btn:hover,
+.preset-reset:hover,
+.btn:hover {
+  transform: scale(1.05);
+}
+
 .conditions-fill {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 0.3rem;
@@ -65,7 +71,8 @@
   align-items: center;
 }
 
-#row-col-index-input {
+#row-col-index-input,
+#condTimes {
   width: 5ch;
 }
 
@@ -100,7 +107,7 @@
 
 .find-object {
   color: white;
-  background-color: grey;
+  background-color: rgb(44, 44, 44);
   width: 5rem;
 }
 
@@ -162,7 +169,11 @@
   margin-top: 1rem;
 }
 
-.selected-square {
-  border: 2px solid white;
+.selected-square,
+.item-color-picker:hover{
+  transform: scale(1.2);
+}
 
+#optional-index {
+  display: none;
 }

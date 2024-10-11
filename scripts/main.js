@@ -18,13 +18,8 @@ const clearCurrentOutput = () => {
   horizontalFlex.innerHTML = "";
   verticalFlex.innerHTML = "";
   layoutGrid.innerHTML = "";
+  statusOfMark = false
 };
-
-const clearCurrentSideBars = () => {
-  horizontalFlex.innerHTML = "";
-  verticalFlex.innerHTML = "";
-}
-
 
 const adjustOutputCss = () => { 
   document.documentElement.style.setProperty("--rowsInput", rows);
@@ -58,27 +53,25 @@ const createVerticalFlex = () => {
 
 
 
-const getSumInfo = () => {
-  let result;
-  let gridItems;
-  gridItems = Array.from(document.getElementsByClassName("output__layout-item"));
-  gridItems = gridItems.map(item => Number(item.innerHTML))
-  result = gridItems.reduce((acc,item)=>{
-    if (acc[item]) {
-      acc[item] = ++acc[item]
-    }
-    else {
-    acc[item] = 1
-    }
+// const getSumInfo = () => {
+//   let result;
+//   let gridItems;
+//   gridItems = Array.from(document.getElementsByClassName("output__layout-item"));
+//   gridItems = gridItems.map(item => Number(item.innerHTML))
+//   result = gridItems.reduce((acc,item)=>{
+//     if (acc[item]) {
+//       acc[item] = ++acc[item]
+//     }
+//     else {
+//     acc[item] = 1
+//     }
 
-  return acc
-  },{})
+//   return acc
+//   },{})
 
-  return result
-};
+//   return result
+// };
 
-let columnIndex = 1
-let rowIndex = 3
 
 const getColumnData = (columnIndex) => {
   let arrayOfIndexs = [];
@@ -120,6 +113,28 @@ const checkSetValues = () => {
   else {return true}
 }
 
+document.getElementById("condGroup").addEventListener("change",()=> {
+  updateConditionValues();
+  if (area === "table" || area === "all-rows" || area === "all-columns") {
+    document.getElementById("optional-index").style.display = "none"
+  }
+
+  else if (area !== "table") {
+    document.getElementById("optional-index").style.display = "inline"
+  }
+})
+
+document.getElementById("condTimes").addEventListener("change",()=>{
+  updateConditionValues()
+  if (times === 1) {
+    document.getElementById("times-time").innerText = "time."
+  }
+
+  else if (times !== 1) {
+     document.getElementById("times-time").innerText = "times."
+  }
+})
+
 const updateConditionValues = () => {
   label = document.getElementById("cond-name").value
   area = document.getElementById("condGroup").value
@@ -154,11 +169,12 @@ const createArrayForTable = () => {
             acc[index] = randNum(10)
             currentStateOfArray = acc
           }
+          //check if currentStateOfArray is not in any conflict: yes>repeat loop no>continue
           while (arrayOfConditions.map(item=>item.conflict()).find(x => x===true) === true)
           return acc
         },[...nullArray])
        }
-
+       //check if final array is matching my conditions: yes>continue no>repeat loop
     while (arrayOfConditions.map(item=>item.status()).find(x => x===false) === false)
 
   return modifiedArray
@@ -201,11 +217,24 @@ const createFullLayout = () => {
   paintColors()
 }
 
+let statusOfMark;
 const markSpan = (objectName) => {
-  let gridItems;
-  gridItems = Array.from(document.getElementsByClassName("output__layout-item"));
-  gridItems.filter(item => item.innerHTML == objectName).forEach(x => x.classList.toggle("output_find-item")
-  )
+  if (statusOfMark === undefined || statusOfMark === false && layoutGrid.childNodes.length !== 0) {
+    layoutGrid.childNodes.forEach(item => {
+      item.style.backgroundColor = "rgb(44, 44, 44)"
+    })
+    layoutGrid.childNodes.forEach(item => {
+      if (Number(item.innerHTML) === Number(objectName)) {
+        item.style.backgroundColor = "#f87171"
+    }
+    })
+    statusOfMark = true
+  }
+
+  else if (statusOfMark = true && layoutGrid.childNodes.length !== 0) {
+    paintColors()
+    statusOfMark = false
+  }
 }
 
 const getTableData = () => {
@@ -309,10 +338,6 @@ const resetFillForCond = () => {
   document.getElementById("cond-name").value = "cond-" + String(arrayOfConditions.length+1)
 }
 
-function replacer(key, value) {
-  return value.replace(/[^\w\s]/gi, '');
-}
-
 let arrayOfConditions = []
 const addCondButton = document.getElementById("add-con-btn")
 const createNewCondition = () => {
@@ -356,6 +381,8 @@ const createNewCondition = () => {
         if (arrayOfConditions.length === 0) {
           document.getElementById("cond-name").value = "cond-1"
         }
+        markSpan()
+        paintColors()
       })
       newDivCon.appendChild(deleteButton)
       newContainer.appendChild(newDivCon)
