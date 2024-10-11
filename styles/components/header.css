@@ -1,0 +1,12 @@
+.header {
+  position: relative;
+}
+
+.github__object {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+.github__object:hover {
+  transform: scale(1.2);
+}
