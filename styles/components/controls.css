@@ -4,6 +4,10 @@
   flex-wrap: wrap;
 }   
 
+.controls__panel { 
+  height: min-content;
+}
+
 .controls__panel-container > :first-child > :not(:first-child){
   text-align: center;
 }
@@ -20,8 +24,7 @@
 .controls__box {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 5px;
-  padding: 1rem;
-  min-height: 110px;
+  padding: 0.5rem;
 }
 
 .box__label {
@@ -83,7 +86,7 @@
   width: 5rem;
 
 
-  background-color: aquamarine;
+  background-color: #86efac;
 }
 
 #cond-name {
@@ -121,9 +124,9 @@
 }
 
 .controls__color {
-  margin-top: 1rem;
   text-align: center;
   display: flex;
+  
   gap:1rem;
   padding:0.5rem;
 }
@@ -176,4 +179,29 @@
 
 #optional-index {
   display: none;
+}
+
+#objects-text {
+  margin-top: 0.5rem;
+  display:inline-block;
+}
+
+.table__headers-for-con {
+  display: flex;
+  width: 80%;
+}
+
+.table-headers {
+  color: grey;
+  font-size: smaller;
+  flex:1;
+}
+
+.aspects {
+  flex:1;
+}
+
+.con-80 {
+  width: 80%;
+  display: flex;
 }

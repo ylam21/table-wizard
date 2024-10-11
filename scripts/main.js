@@ -352,16 +352,20 @@ const createNewCondition = () => {
   }
   
   else {
-    let newCondition = new Condition()
-    arrayOfConditions.push(newCondition)
-    const divOfConditions = document.getElementById("my-condition")
-    let newContainer = document.createElement("div");
-    let newLabelSpan = document.createElement("span");
-    newLabelSpan.appendChild(document.createTextNode(newCondition.label))
-    newContainer.appendChild(newLabelSpan)
-      let newSpan = document.createElement("span");
-      newSpan.appendChild(document.createTextNode(JSON.stringify(newCondition)))
-      newContainer.appendChild(newSpan)
+      let newCondition = new Condition()
+      arrayOfConditions.push(newCondition)
+      const mainCointainer = document.getElementById("my-condition")
+      let newDivConAspects = document.createElement("div")
+      // box for aspects
+      let eithypercent = document.createElement("div");
+      eithypercent.classList.add("con-80")
+      for (let i=0;i<Object.keys(newCondition).length;i++) {
+        let newSpan = document.createElement("span");
+        newSpan.classList.add("aspects")
+        newSpan.appendChild(document.createTextNode(Object.values(newCondition)[i]))
+        eithypercent.appendChild(newSpan)
+      }
+      newDivConAspects.appendChild(eithypercent)
       // box for find btn and delete btn
       let newDivCon = document.createElement("div")
       // find button
@@ -385,10 +389,10 @@ const createNewCondition = () => {
         paintColors()
       })
       newDivCon.appendChild(deleteButton)
-      newContainer.appendChild(newDivCon)
+      newDivConAspects.appendChild(newDivCon)
       // container
-      newContainer.classList.add("cond-container")
-      divOfConditions.appendChild(newContainer)
+      newDivConAspects.classList.add("cond-container")
+      mainCointainer.appendChild(newDivConAspects)
       resetFillForCond()
     }
 }
