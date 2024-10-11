@@ -362,7 +362,12 @@ const createNewCondition = () => {
       for (let i=0;i<Object.keys(newCondition).length;i++) {
         let newSpan = document.createElement("span");
         newSpan.classList.add("aspects")
-        newSpan.appendChild(document.createTextNode(Object.values(newCondition)[i]))
+        if (i===2 && Object.values(newCondition)[1] === "table" ) {
+          newSpan.appendChild(document.createTextNode(""))
+        }
+        else {
+          newSpan.appendChild(document.createTextNode(Object.values(newCondition)[i]))
+        }
         eithypercent.appendChild(newSpan)
       }
       newDivConAspects.appendChild(eithypercent)
