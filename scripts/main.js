@@ -390,6 +390,7 @@ const createNewCondition = () => {
         if (arrayOfConditions.length === 0) {
           document.getElementById("cond-name").value = "cond-1"
         }
+        updateConditionValues();
         markSpan()
         paintColors()
       })
