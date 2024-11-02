@@ -9,4 +9,4 @@ You can adjust the appearance of specific data types by setting conditions such 
 Additionally, you can control how neighboring cells interact. <br/>
 *Example: "I don't want the number 1 next to the number 2."*
 
-**Status**: Under development.
+[Try it here](https://tablewizardcom-ohnivasasankas-projects.vercel.app/)
