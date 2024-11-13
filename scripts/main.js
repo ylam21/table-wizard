@@ -51,28 +51,6 @@ const createVerticalFlex = () => {
   };
 };
 
-
-
-// const getSumInfo = () => {
-//   let result;
-//   let gridItems;
-//   gridItems = Array.from(document.getElementsByClassName("output__layout-item"));
-//   gridItems = gridItems.map(item => Number(item.innerHTML))
-//   result = gridItems.reduce((acc,item)=>{
-//     if (acc[item]) {
-//       acc[item] = ++acc[item]
-//     }
-//     else {
-//     acc[item] = 1
-//     }
-
-//   return acc
-//   },{})
-
-//   return result
-// };
-
-
 const getColumnData = (columnIndex) => {
   let arrayOfIndexs = [];
   for (let i=0;i<totalItemsCalc;i++) {
