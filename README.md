@@ -1,11 +1,46 @@
 # Table Wizard
-Data Arrangement Tool
 
-Table Wizard allows you to create customized tables based on your criteria, handling two types of data: **numbers** and **strings**.
+**Table Wizard** is a lightweight web tool for data arrangement and logic-based table customization.
 
-You can adjust the appearance of specific data types by setting conditions. <br/>
-*Example 1: "I want the number 7 to appear exactly 2 times in my table."* <br/>
-*Example 2: "I want the number 3 to appear minimum 3 times in my row number 1."* <br/>
-*Example 3: "I want the number 9 to appear exactly 0 times in column number 8."* <br/>
+## Description
 
+Table Wizard allows you to create customized tables that handle **numeric conditions** based on your criteria.
+
+You can define appearance rules for specific values in rows or columns:
+
+- **Example 1:** “I want the number 7 to appear **exactly 2 times** in my table.”
+- **Example 2:** “I want the number 3 to appear **at least 3 times** in row number 1.”
+- **Example 3:** “I want the number 9 to appear **exactly 0 times** in column number 8.”
+
+This makes the tool ideal for structured layouts, scheduling, or constraint-based logic.
+
+## Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Run Locally](#run-locally)
+  - [Try Online](#try-online)
+- [Tech Stack](#tech-stack)
+---
+
+## Installation
+
+```sh
+git clone git@github.com:ylam21/table-wizard.git table_wizard 
+```
+```sh
+cd table_wizard
+```
+## Usage
+### Run locally
+```sh
+open index.html
+```
+### Run online
 Try it [here](https://tablewizardcom-ohnivasasankas-projects.vercel.app/)
+
+## Tech stack
+- HTML5
+- CSS3
+- Vanilla JavaScript (no frameworks) 
