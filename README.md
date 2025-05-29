@@ -14,16 +14,6 @@ You can define appearance rules for specific values in rows or columns:
 
 This makes the tool ideal for structured layouts, scheduling, or constraint-based logic.
 
-## Table of Contents
-
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Run Locally](#run-locally)
-  - [Try Online](#try-online)
-- [Tech Stack](#tech-stack)
----
-
 ## Installation
 
 ```sh
